@@ -75,8 +75,8 @@ BEGIN
         MENUITEM "Ativar o &HDR",           IDM_ENABLE_HDR
         MENUITEM "&Iniciar ao fazer login", IDM_AUTOSTART
         MENUITEM SEPARATOR
-        MENUITEM "&SDR 80",                 IDM_SDRWL_80
-        MENUITEM "&SDR 203",                IDM_SDRWL_203
+        MENUITEM "SDR white level &80 (sRGB)",       IDM_SDRWL_80
+        MENUITEM "SDR white level &203 (BT.2408)",   IDM_SDRWL_203
         MENUITEM SEPARATOR
         MENUITEM "&Sair",                   IDM_EXIT
     END
