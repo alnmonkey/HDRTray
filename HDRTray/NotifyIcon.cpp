@@ -371,3 +371,8 @@ bool NotifyIcon::IsAutostartEnabled() const
 
     return has_auto_start;
 }
+
+void NotifyIcon::SetSDRWhiteLevel(float nits)
+{
+    hdr::SetSDRWhiteLevel(nits);
+}

@@ -59,6 +59,8 @@ public:
     void ToggleAutostartEnabled();
     void ToggleHDR();
 
+    void SetSDRWhiteLevel(float nits);
+
 protected:
     void PopupIconMenu(HWND hWnd, POINT pos);
 

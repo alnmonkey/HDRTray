@@ -26,6 +26,8 @@
 #define IDM_EXIT                101
 #define IDM_AUTOSTART           102
 #define IDM_ENABLE_HDR          103
+#define IDM_SDRWL_80            104
+#define IDM_SDRWL_203           105
 
 #define IDI_APP                 1
 #define IDI_HDR_OFF_DARKMODE    101

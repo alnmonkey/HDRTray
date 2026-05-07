@@ -33,6 +33,7 @@ std::optional<Status> SetWindowsHDRStatus(bool enable);
 std::optional<Status> ToggleHDRStatus();
 /// Get information for all displays
 std::vector<Display> GetDisplays();
+bool SetSDRWhiteLevel(float nits);
 
 } // namespace hdr
 
