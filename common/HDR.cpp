@@ -201,19 +201,21 @@ std::vector<Display> GetDisplays()
     return result;
 }
 
-//https://github.com/Filoppi/Luma-Framework/blob/main/Source/Core/utils/display.hpp //TODO: GetSDRWhiteLevel if needed
+// From https://github.com/Filoppi/Luma-Framework/blob/main/Source/Core/utils/display.hpp
 #define DISPLAYCONFIG_DEVICE_INFO_SET_SDR_WHITE_LEVEL (DISPLAYCONFIG_DEVICE_INFO_TYPE)0xFFFFFFEE
+
 typedef struct __declspec(align(4)) _DISPLAYCONFIG_SET_SDR_WHITE_LEVEL
 {
-	DISPLAYCONFIG_DEVICE_INFO_HEADER header;
-	ULONG                            SDRWhiteLevel;
-	BYTE                             finalValue;
+    DISPLAYCONFIG_DEVICE_INFO_HEADER header;
+    ULONG SDRWhiteLevel;
+    BYTE finalValue;
 } DISPLAYCONFIG_SET_SDR_WHITE_LEVEL;
+
 bool SetSDRWhiteLevel(float nits)
 {
     bool success = false;
     ForEachDisplay([&](const DISPLAYCONFIG_MODE_INFO& mode) {
-        DISPLAYCONFIG_SET_SDR_WHITE_LEVEL setSdrWhiteLevel{};
+        DISPLAYCONFIG_SET_SDR_WHITE_LEVEL setSdrWhiteLevel = { };
         setSdrWhiteLevel.header.type = DISPLAYCONFIG_DEVICE_INFO_SET_SDR_WHITE_LEVEL;
         setSdrWhiteLevel.header.size = sizeof(DISPLAYCONFIG_SET_SDR_WHITE_LEVEL);
         setSdrWhiteLevel.header.adapterId = mode.adapterId;
@@ -225,5 +227,7 @@ bool SetSDRWhiteLevel(float nits)
     });
     return success;
 }
+
+// TODO: GetSDRWhiteLevel if needed
 
 } // namespace hdr

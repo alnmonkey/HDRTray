@@ -192,10 +192,10 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             case IDM_AUTOSTART:
                 notify_icon->ToggleAutostartEnabled();
                 break;
-            case IDM_SDRWL_80: //Lowest / sRGB
+            case IDM_SDRWL_80: // Lowest / sRGB
                 notify_icon->SetSDRWhiteLevel(80);
                 break;
-            case IDM_SDRWL_203: //ITU-R BT.2408
+            case IDM_SDRWL_203: // ITU-R BT.2408
                 notify_icon->SetSDRWhiteLevel(203);
                 break;
             case IDM_EXIT:
